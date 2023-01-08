@@ -60,7 +60,7 @@ COMPILER_ASSERT(DAPLINK_HIC_ID == DAPLINK_HIC_ID_SAM3U2C);
 
 // nRESET OUT Pin
 #define PIN_nRESET_PORT         PIOA
-#define PIN_nRESET_BIT          4
+#define PIN_nRESET_BIT          25
 #define PIN_nRESET              (1UL << PIN_nRESET_BIT)
 
 // SWCLK/TCK Pin
@@ -73,8 +73,14 @@ COMPILER_ASSERT(DAPLINK_HIC_ID == DAPLINK_HIC_ID_SAM3U2C);
 #define PIN_SWDIO_BIT           18
 #define PIN_SWDIO               (1UL << PIN_SWDIO_BIT)
 
-// TDI Pin - Not used
+// TDI Pin
+#define PIN_TDI_PORT          PIOB
+#define PIN_TDI_BIT           16
+#define PIN_TDI               (1UL << PIN_TDI_BIT)
 
-// SWO/TDO Pin - Not used
+// SWO/TDO Pin
+#define PIN_TDO_PORT          PIOB
+#define PIN_TDO_BIT           15
+#define PIN_TDO               (1UL << PIN_TDO_BIT)
 
 #endif

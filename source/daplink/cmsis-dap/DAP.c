@@ -1816,6 +1816,19 @@ uint32_t DAP_ExecuteCommand(const uint8_t *request, uint8_t *response) {
   return DAP_ProcessCommand(request, response);
 }
 
+extern void swd_set_target_soft_reset(void);
+
+void set_target_soft_reset()
+{
+	if (DAP_Data.debug_port == DAP_PORT_SWD) {
+			swd_set_target_soft_reset();
+	}
+#if 0
+ else if {DAP_Data.debug_port = DAP_PORT_JTAG} {			
+	}
+#endif
+	
+}
 
 // Setup DAP
 void DAP_Setup(void) {

@@ -19,7 +19,22 @@
 ; *
 ; *****************************************************************************/
 
-#include "daplink_defaults.h"
+#ifndef DAPLINK_DEFAULTS_H
+#define DAPLINK_DEFAULTS_H
+
+#ifndef DAPLINK_HEAP_SIZE
+#define DAPLINK_HEAP_SIZE 0x0
+#endif
+
+#ifndef DAPLINK_STACK_SIZE
+#if defined(DAPLINK_BL)
+#define DAPLINK_STACK_SIZE 0x800
+#elif defined(DAPLINK_IF)
+#define DAPLINK_STACK_SIZE 0x200
+#endif
+#endif
+
+#endif
 
 ; <h> Stack Configuration
 ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
