@@ -475,13 +475,9 @@ extern void set_target_soft_reset(void);
 
 __STATIC_FORCEINLINE void     PIN_nRESET_OUT(uint32_t bit)
 {
-    set_target_soft_reset();
-    
-    if (bit & 1) {
-        PIN_nRESET_PORT->PIO_SODR = PIN_nRESET;
-
-    } else {
-        PIN_nRESET_PORT->PIO_CODR = PIN_nRESET;
+    if(bit == 0)
+    {
+        set_target_soft_reset();
     }
 }
 #endif
